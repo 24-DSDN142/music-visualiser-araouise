@@ -1,7 +1,7 @@
 
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
-  background(20)
+  background(230, 183, 237)
   textFont('Verdana'); // please use CSS safe fonts
   rectMode(CENTER)
   textSize(24);
@@ -9,7 +9,7 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 
   stroke(235, 216, 52)
   strokeWeight(4)
-  fill(0)
+  fill(230, 183, 237)
   rect(300, 300, 300, 100)
 
   let buttonSize = map(vocal, 0, 100, 10, 50)
