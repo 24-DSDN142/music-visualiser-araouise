@@ -6,12 +6,13 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   rectMode(CENTER)
   textSize(24);
   
-
+  //handle
   stroke(235, 216, 52)
   strokeWeight(4)
   fill(230, 183, 237)
   rect(300, 300, 300, 100)
 
+  // buttons
   let buttonSize = map(vocal, 0, 100, 10, 50)
   fill (255)
   strokeWeight(0)
@@ -23,9 +24,11 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   let buttonSize3 = map(other, 0, 100, 10, 50)
   rect (350, 300, buttonSize3, buttonSize3) // right
 
+  //speaker body
   fill(235, 216, 52)
  rect(300, 400, 500, 200)
 
+ //speaker
   let speakerSize = map(drum, 0, 100, 50, 200)
   fill (255)
   stroke(235, 216, 52)
@@ -35,7 +38,10 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   ellipse(150, 400, speakerSize/2, speakerSize/2)
   ellipse(450, 400, speakerSize/2, speakerSize/2)
 
-
+  // textAlign(CENTER);
+  // fill(255)
+  // textSize(vocal);
+  // text(words, width/2, height/3);
 
 
 
