@@ -1,15 +1,15 @@
 
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
-  background(230, 183, 237)
+  background(54, 48, 44)
   textFont('Verdana'); // please use CSS safe fonts
   rectMode(CENTER)
   textSize(24);
-  
+  console.log(counter)
   //handle
   stroke(235, 216, 52)
   strokeWeight(4)
-  fill(230, 183, 237)
+  fill(54, 48, 44)
   rect(300, 300, 300, 100)
 
   // buttons
@@ -37,6 +37,8 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   fill (235, 216, 52)
   ellipse(150, 400, speakerSize/2, speakerSize/2)
   ellipse(450, 400, speakerSize/2, speakerSize/2)
+
+  
 
   // textAlign(CENTER);
   // fill(255)
