@@ -38,8 +38,21 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   ellipse(150, 400, speakerSize/2, speakerSize/2)
   ellipse(450, 400, speakerSize/2, speakerSize/2)
 
-  
+  let y = 70
+  let speakerSize2 = map(vocal, 0, 100, 40, 20)
+  for( let i = 1; i < 4; i++){
+  let loopyY = y * i;
+  fill (255)
+  ellipse(100, loopyY, speakerSize2, speakerSize2)
+  ellipse(200, loopyY, speakerSize2, speakerSize2)
+  ellipse(300, loopyY, speakerSize2, speakerSize2)
+  ellipse(400, loopyY, speakerSize2, speakerSize2)
+  ellipse(500, loopyY, speakerSize2, speakerSize2)
+  }
 
+  if(counter > 700){
+    fill(227, 168, 129)
+  }
   // textAlign(CENTER);
   // fill(255)
   // textSize(vocal);
