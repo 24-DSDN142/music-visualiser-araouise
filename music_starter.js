@@ -50,9 +50,7 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   ellipse(500, loopyY, speakerSize2, speakerSize2)
   }
 
-  if(counter > 700){
-    fill(227, 168, 129)
-  }
+
   // textAlign(CENTER);
   // fill(255)
   // textSize(vocal);
