@@ -11,36 +11,36 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   textSize(24);
   console.log(counter)
   //handle
-  stroke(235, 216, 52)
-  strokeWeight(4)
-  fill(54, 48, 44)
-  rect(300, 300, 300, 100)
-
-  // buttons
-  let buttonSize = map(vocal, 0, 100, 10, 50)
-  fill (255)
+  //stroke(235, 216, 52)
   strokeWeight(0)
-  rect(300, 300, buttonSize, buttonSize) // middle
+  //fill(135, 206, 235)
+  //rect(300, 300, 300, 100)
 
-  let buttonSize2 = map(bass, 0, 100, 10, 50)
-  rect (250, 300, buttonSize2, buttonSize2) //left
+//   // buttons
+//   let buttonSize = map(vocal, 0, 100, 10, 50)
+//   fill (255)
+//   strokeWeight(0)
+//   rect(300, 300, buttonSize, buttonSize) // middle
 
-  let buttonSize3 = map(other, 0, 100, 10, 50)
-  rect (350, 300, buttonSize3, buttonSize3) // right
+//   let buttonSize2 = map(bass, 0, 100, 10, 50)
+//   rect (250, 300, buttonSize2, buttonSize2) //left
 
-  //speaker body
-  fill(235, 216, 52)
- rect(300, 400, 500, 200)
+//   let buttonSize3 = map(other, 0, 100, 10, 50)
+//   rect (350, 300, buttonSize3, buttonSize3) // right
 
- //speaker
-  let speakerSize = map(drum, 0, 100, 50, 200)
-  fill (255)
-  stroke(235, 216, 52)
-  ellipse(150, 400, speakerSize, speakerSize)
-  ellipse(450, 400, speakerSize, speakerSize)
-  fill (235, 216, 52)
-  ellipse(150, 400, speakerSize/2, speakerSize/2)
-  ellipse(450, 400, speakerSize/2, speakerSize/2)
+//   //speaker body
+//   fill(235, 216, 52)
+//  rect(300, 400, 500, 200)
+
+//  //speaker
+//   let speakerSize = map(drum, 0, 100, 50, 200)
+//   fill (255)
+//   stroke(235, 216, 52)
+//   ellipse(150, 400, speakerSize, speakerSize)
+//   ellipse(450, 400, speakerSize, speakerSize)
+//   fill (235, 216, 52)
+//   ellipse(150, 400, speakerSize/2, speakerSize/2)
+//   ellipse(450, 400, speakerSize/2, speakerSize/2)
 
   // let y = 70
   // let speakerSize2 = map(vocal, 0, 100, 40, 20)
@@ -54,27 +54,51 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   // ellipse(500, loopyY, speakerSize2, speakerSize2)
   // }
 
-  fill(255);
-  ellipse(Xmove, 60, 70, 70);
-  ellipse(Xmove2, 70, 70, 70);
-  ellipse(Xmove3, 70, 70, 70);
-  Xmove = Xmove + 0.5;
+  let cloudSize2 = map(other, 0, 100, 160, 80);
+  fill (232, 237, 237);
+  ellipse(width - Xmove, 55, cloudSize2, 60); //middle
+  ellipse(width - 30 - Xmove, 65, cloudSize2, 60); //right
+  ellipse(width + 30 - Xmove, 65, cloudSize2, 60); //left
 
+  fill(255);
+  ellipse(width - Xmove, 60, cloudSize2, 60); //middle cloud
+  ellipse(width - Xmove, 80, cloudSize2, 60); //middle cloud - bottom
+  ellipse(width + 30 - Xmove, 70, cloudSize2, 60); //left cloud
+  ellipse(width - 30 - Xmove, 70, cloudSize2, 60); // right cloud
+ 
+  Xmove = Xmove + 0.5;
   if (Xmove > 600){
     Xmove = 0;
   }
 
-  Xmove2 = Xmove + 30;
+  // Xmove2 = Xmove + 30;
+  // if (Xmove2 > 650){
+  //   Xmove2 = 5;
+  // }
 
-  if (Xmove2 > 650){
-    Xmove2 = 5;
-  }
+  // Xmove3 = Xmove - 30;
+  // if(Xmove3 > 580){
+  //   Xmove3 = 0.5;
+  // }
 
-  Xmove3 = Xmove - 30;
+ let cloudSize = map(other, 0, 100, 160, 80)
 
-  if(Xmove3 > 550){
-    Xmove3 = 0.5;
-  }
+  fill (232, 237, 237); //shadow
+  ellipse(50, 400, 200, cloudSize, cloudSize);
+  ellipse(130, 430, 200, cloudSize, cloudSize);
+  ellipse(200, 480, 200, cloudSize, cloudSize);
+
+  
+  fill (255); //front
+  ellipse(50, 450, 200, cloudSize, cloudSize);
+  ellipse(150, 480, 200, cloudSize, cloudSize);
+  ellipse(20, 540, 200, cloudSize, cloudSize);
+  ellipse(150, 535, 200, cloudSize, cloudSize);
+  ellipse(230, 535, 200, cloudSize, cloudSize);
+
+  // let cloudSize = map (other, 0, 100, 150, 70);
+  // ellipse(300, 300, 200, cloudSize, cloudSize);
+  // ellipse(350, 310, 200, cloudSize, cloudSize);
 
 
   // textAlign(CENTER);
