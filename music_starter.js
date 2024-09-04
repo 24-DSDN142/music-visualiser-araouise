@@ -1,9 +1,11 @@
 
 let Xmove = 1
+let Xmove2 = 2
+let Xmove3 = 3
 
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
-  background(177, 211, 222) // pastel blue
+  background(135, 206, 235) // pastel blue
   textFont('Verdana'); // please use CSS safe fonts
   rectMode(CENTER)
   textSize(24);
@@ -40,25 +42,41 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   ellipse(150, 400, speakerSize/2, speakerSize/2)
   ellipse(450, 400, speakerSize/2, speakerSize/2)
 
-  let y = 70
-  let speakerSize2 = map(vocal, 0, 100, 40, 20)
-  for( let i = 1; i < 4; i++){
-  let loopyY = y * i;
-  fill (255)
-  ellipse(100, loopyY, speakerSize2, speakerSize2)
-  ellipse(200, loopyY, speakerSize2, speakerSize2)
-  ellipse(300, loopyY, speakerSize2, speakerSize2)
-  ellipse(400, loopyY, speakerSize2, speakerSize2)
-  ellipse(500, loopyY, speakerSize2, speakerSize2)
-  }
+  // let y = 70
+  // let speakerSize2 = map(vocal, 0, 100, 40, 20)
+  // for( let i = 1; i < 4; i++){
+  // let loopyY = y * i;
+  // fill (255)
+  // ellipse(100, loopyY, speakerSize2, speakerSize2)
+  // ellipse(200, loopyY, speakerSize2, speakerSize2)
+  // ellipse(300, loopyY, speakerSize2, speakerSize2)
+  // ellipse(400, loopyY, speakerSize2, speakerSize2)
+  // ellipse(500, loopyY, speakerSize2, speakerSize2)
+  // }
 
-  fill(0, 0, 255);
-  ellipse(Xmove, 25, 30, 30);
-  Xmove = Xmove + 1;
+  fill(255);
+  ellipse(Xmove, 60, 70, 70);
+  ellipse(Xmove2, 70, 70, 70);
+  ellipse(Xmove3, 70, 70, 70);
+  Xmove = Xmove + 0.5;
 
   if (Xmove > 600){
     Xmove = 0;
   }
+
+  Xmove2 = Xmove + 30;
+
+  if (Xmove2 > 650){
+    Xmove2 = 5;
+  }
+
+  Xmove3 = Xmove - 30;
+
+  if(Xmove3 > 550){
+    Xmove3 = 0.5;
+  }
+
+
   // textAlign(CENTER);
   // fill(255)
   // textSize(vocal);
