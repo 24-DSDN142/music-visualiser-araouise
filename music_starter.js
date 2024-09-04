@@ -1,7 +1,9 @@
 
+let Xmove = 1
+
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
-  background(54, 48, 44)
+  background(177, 211, 222) // pastel blue
   textFont('Verdana'); // please use CSS safe fonts
   rectMode(CENTER)
   textSize(24);
@@ -50,7 +52,13 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   ellipse(500, loopyY, speakerSize2, speakerSize2)
   }
 
+  fill(0, 0, 255);
+  ellipse(Xmove, 25, 30, 30);
+  Xmove = Xmove + 1;
 
+  if (Xmove > 600){
+    Xmove = 0;
+  }
   // textAlign(CENTER);
   // fill(255)
   // textSize(vocal);
