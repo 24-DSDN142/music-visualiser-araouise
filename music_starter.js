@@ -70,8 +70,8 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   
   fill (255);
   ellipse(width - Xmove2, 250, cloudSize3, 100)
-  ellipse(width + 30 - Xmove2, 270, cloudSize3, 100);
-  ellipse(width - 30 - Xmove2, 270, cloudSize3, 100);
+  ellipse(width + 70 - Xmove2, 270, cloudSize3, 100);
+  //ellipse(width + 90 - Xmove2, 245, cloudSize3, 100);
   ellipse(width - Xmove2, 300, cloudSize3, 100); //middle cloud
   ellipse(width + 60 - Xmove2, 300, cloudSize3, 100); //middle cloud - right
   ellipse(width - 60 - Xmove2, 300, cloudSize3, 100); //middle cloud - left
@@ -82,14 +82,14 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
     Xmove = 0;
   }
 
-  // Xmove2 = Xmove + 30;
-  // if (Xmove2 > 650){
-  //   Xmove2 = 5;
+  // Xmove3 = Xmove + 30;
+  // if (Xmove3 > 650){
+  //   Xmove3 = 5;
   // }
 
   Xmove2 = Xmove - 150;
   if(Xmove2 > 700){
-    Xmove2 = 10;
+    Xmove2 = 0.10;
   }
 
  let cloudSize = map(other, 0, 100, 160, 80)
