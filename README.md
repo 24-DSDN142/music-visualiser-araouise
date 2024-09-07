@@ -6,4 +6,4 @@ A P5JS framework for running a simple music visualizer, intended as a creative c
 
 Song details: // UPDATE THIS AS YOUR CHANGE YOUR SONG 
 Title = Antenna
-Artist = HYUKOH
+Artist = HYUKOH and Sunset Rollercoaster
