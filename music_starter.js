@@ -2,6 +2,7 @@
 let Xmove = 1
 let Xmove2 = 2
 let Xmove3 = 3
+let Xmove4 = 4
 
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
@@ -49,18 +50,23 @@ fill (237, 240, 245);
   ellipse(width + 90 - Xmove2, 300, cloudSize3, 100); //middle cloud - right
   ellipse(width - 60 - Xmove2, 300, cloudSize3, 100); //middle cloud - left
 
+  let cloudSize5 = map(other, 0, 100, 100, 30);
+  fill (237, 240, 245)
+  ellipse(300, 135, 80, cloudSize5, 30);//mid
+  ellipse(285, 138, 80, cloudSize5, 30);//left
+  ellipse(315, 140, 80, cloudSize5, 30);
 
   Xmove = Xmove + 0.5;
-  if (Xmove > 700){
+  if (Xmove > 680){
     Xmove = 0;
   }
 
   Xmove2 = Xmove2 + 0.8;
-  if(Xmove2 > 1200){
+  if(Xmove2 > 1250){
     Xmove2 = 0;
   }
 
-Xmove3 = Xmove3 + 0.1;
+Xmove3 = Xmove3 + 0.2;
   if (Xmove3 > 650){
     Xmove3 = 0;
   }
@@ -76,7 +82,7 @@ Xmove3 = Xmove3 + 0.1;
   ellipse(250, 535, 200, cloudSize, cloudSize); //shadow (farthest back)
 
   fill (255); // white
-  ellipse(250, 530, 200, cloudSize, cloudSize); //lower right cloud
+  ellipse(255, 530, 200, cloudSize, cloudSize); //lower right cloud
 
  fill (237, 238, 240); // grey
   ellipse(50, 445, 200, cloudSize, cloudSize);// mid shadow
