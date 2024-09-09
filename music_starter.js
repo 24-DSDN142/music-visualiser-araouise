@@ -10,57 +10,26 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   rectMode(CENTER)
   textSize(24);
   console.log(counter)
-  //handle
-  //stroke(235, 216, 52)
   strokeWeight(0)
-  //fill(135, 206, 235)
-  //rect(300, 300, 300, 100)
-
-//   // buttons
-//   let buttonSize = map(vocal, 0, 100, 10, 50)
-//   fill (255)
-//   strokeWeight(0)
-//   rect(300, 300, buttonSize, buttonSize) // middle
-
-//   let buttonSize2 = map(bass, 0, 100, 10, 50)
-//   rect (250, 300, buttonSize2, buttonSize2) //left
-
-//   let buttonSize3 = map(other, 0, 100, 10, 50)
-//   rect (350, 300, buttonSize3, buttonSize3) // right
-
-//   //speaker body
-//   fill(235, 216, 52)
-//  rect(300, 400, 500, 200)
-
-//  //speaker
-//   let speakerSize = map(drum, 0, 100, 50, 200)
-//   fill (255)
-//   stroke(235, 216, 52)
-//   ellipse(150, 400, speakerSize, speakerSize)
-//   ellipse(450, 400, speakerSize, speakerSize)
-//   fill (235, 216, 52)
-//   ellipse(150, 400, speakerSize/2, speakerSize/2)
-//   ellipse(450, 400, speakerSize/2, speakerSize/2)
-
-  // let y = 70
-  // let speakerSize2 = map(vocal, 0, 100, 40, 20)
-  // for( let i = 1; i < 4; i++){
-  // let loopyY = y * i;
-  // fill (255)
-  // ellipse(100, loopyY, speakerSize2, speakerSize2)
-  // ellipse(200, loopyY, speakerSize2, speakerSize2)
-  // ellipse(300, loopyY, speakerSize2, speakerSize2)
-  // ellipse(400, loopyY, speakerSize2, speakerSize2)
-  // ellipse(500, loopyY, speakerSize2, speakerSize2)
-  // }
 
 
   if(counter > 4700){
     background(42, 34, 51);
   }
 
+  let cloudSize4 = map(other, 0, 100, 70, 20);
+  fill (218, 221, 227); //shadow for far clouds - grey
+  ellipse(width - Xmove3, 205, 50, cloudSize4, 1); // mid (far clouds)
+  ellipse(width - 10 - Xmove3, 215, 50, cloudSize4, 1); // left
+  ellipse(width  + 10 - Xmove3, 210, 50, cloudSize4, 1); // right
+
+fill (237, 240, 245);
+  ellipse(width - Xmove3, 200, 50,cloudSize4, 1); // mid (far clouds)
+  ellipse(width - 10 - Xmove3, 210, 50, cloudSize4, 1); // left
+  ellipse(width + 10 - Xmove3, 205, 50, cloudSize4, 1); // right
+
   let cloudSize2 = map(other, 0, 100, 160, 80);
-  fill (232, 237, 237);
+  fill (232, 237, 237); // shadow top clouds - moving
   ellipse(width - Xmove, 85, cloudSize2, 60); //middle
   ellipse(width - 30 - Xmove, 75, cloudSize2, 60); //right
   ellipse(width + 30 - Xmove, 75, cloudSize2, 60); //left
@@ -72,51 +41,57 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   ellipse(width - 30 - Xmove, 70, cloudSize2, 60); // right cloud
   
   let cloudSize3 = map(other, 0, 100, 200, 140)
-  
   fill (255);
   ellipse(width - Xmove2, 250, cloudSize3, 100)
   ellipse(width + 70 - Xmove2, 270, cloudSize3, 100);
-  //ellipse(width + 90 - Xmove2, 245, cloudSize3, 100);
+  // ellipse(width + 90 - Xmove2, 245, cloudSize3, 100);
   ellipse(width - Xmove2, 300, cloudSize3, 100); //middle cloud
-  ellipse(width + 60 - Xmove2, 300, cloudSize3, 100); //middle cloud - right
+  ellipse(width + 90 - Xmove2, 300, cloudSize3, 100); //middle cloud - right
   ellipse(width - 60 - Xmove2, 300, cloudSize3, 100); //middle cloud - left
- 
+
 
   Xmove = Xmove + 0.5;
   if (Xmove > 700){
     Xmove = 0;
   }
 
-  // Xmove3 = Xmove + 30;
-  // if (Xmove3 > 650){
-  //   Xmove3 = 5;
-  // }
-
-  Xmove2 = Xmove2 + 0.7;
+  Xmove2 = Xmove2 + 0.8;
   if(Xmove2 > 1200){
     Xmove2 = 0;
   }
 
+Xmove3 = Xmove3 + 0.1;
+  if (Xmove3 > 650){
+    Xmove3 = 0;
+  }
+
  let cloudSize = map(other, 0, 100, 160, 80)
 
-  fill (255); //shadow
-  ellipse(50, 400, 200, cloudSize, cloudSize);
+  fill (255); //white
+  ellipse(50, 400, 200, cloudSize, cloudSize); //clouds (back)
   ellipse(130, 430, 200, cloudSize, cloudSize);
   ellipse(210, 480, 200, cloudSize, cloudSize);
 
- fill (237, 238, 240);
+  fill (237, 238, 240);
+  ellipse(250, 535, 200, cloudSize, cloudSize); //shadow (farthest back)
+
+  fill (255); // white
+  ellipse(250, 530, 200, cloudSize, cloudSize); //lower right cloud
+
+ fill (237, 238, 240); // grey
   ellipse(50, 445, 200, cloudSize, cloudSize);// mid shadow
   ellipse(151, 475, 200, cloudSize, cloudSize);
   ellipse(229, 530, 200, cloudSize, cloudSize);
   ellipse(20, 545, 200, cloudSize, cloudSize);// bottom shadow
   ellipse(150, 540, 200, cloudSize, cloudSize);
-  ellipse(230, 540, 200, cloudSize, cloudSize);
+  ellipse(220, 540, 200, cloudSize, cloudSize);
+  // ellipse(250, 540, 200, cloudSize, cloudSize);
 
-  fill (255); //front
-  if(counter > 4700){
-    fill (42, 48, 61)
-  }
-  ellipse(50, 450, 200, cloudSize, cloudSize);
+  fill (255); //white 
+  // if(counter > 4700){
+  //   fill (42, 48, 61)
+  // }
+  ellipse(50, 450, 200, cloudSize, cloudSize); //clouds (front)
   ellipse(150, 480, 200, cloudSize, cloudSize);
   ellipse(20, 540, 200, cloudSize, cloudSize);
   ellipse(150, 535, 200, cloudSize, cloudSize);
@@ -174,3 +149,45 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 //    textSize(vocal);
 //    text(words, width/2, height/3);
 // 
+  //handle
+  //stroke(235, 216, 52)
+  //fill(135, 206, 235)
+  //rect(300, 300, 300, 100)
+
+//   // buttons
+//   let buttonSize = map(vocal, 0, 100, 10, 50)
+//   fill (255)
+//   strokeWeight(0)
+//   rect(300, 300, buttonSize, buttonSize) // middle
+
+//   let buttonSize2 = map(bass, 0, 100, 10, 50)
+//   rect (250, 300, buttonSize2, buttonSize2) //left
+
+//   let buttonSize3 = map(other, 0, 100, 10, 50)
+//   rect (350, 300, buttonSize3, buttonSize3) // right
+
+//   //speaker body
+//   fill(235, 216, 52)
+//  rect(300, 400, 500, 200)
+
+//  //speaker
+//   let speakerSize = map(drum, 0, 100, 50, 200)
+//   fill (255)
+//   stroke(235, 216, 52)
+//   ellipse(150, 400, speakerSize, speakerSize)
+//   ellipse(450, 400, speakerSize, speakerSize)
+//   fill (235, 216, 52)
+//   ellipse(150, 400, speakerSize/2, speakerSize/2)
+//   ellipse(450, 400, speakerSize/2, speakerSize/2)
+
+  // let y = 70
+  // let speakerSize2 = map(vocal, 0, 100, 40, 20)
+  // for( let i = 1; i < 4; i++){
+  // let loopyY = y * i;
+  // fill (255)
+  // ellipse(100, loopyY, speakerSize2, speakerSize2)
+  // ellipse(200, loopyY, speakerSize2, speakerSize2)
+  // ellipse(300, loopyY, speakerSize2, speakerSize2)
+  // ellipse(400, loopyY, speakerSize2, speakerSize2)
+  // ellipse(500, loopyY, speakerSize2, speakerSize2)
+  // }
