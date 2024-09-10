@@ -70,7 +70,7 @@ fill (237, 240, 245);
 
 
   Xmove = Xmove + 0.5;
-  if (Xmove > 680){
+  if (Xmove > 1100){
     Xmove = 0;
   }
 
@@ -80,17 +80,17 @@ fill (237, 240, 245);
   }
 
 Xmove3 = Xmove3 + 0.3;
-  if (Xmove3 > 650){
+  if (Xmove3 > 1130){
     Xmove3 = 0;
   }
 
 Xmove4 = Xmove4 + 0.1;
-if (Xmove4 > 650){
+if (Xmove4 > 1130){
   Xmove4 = 0;
 }
 
 Xmove5 = Xmove5 + 0.9;
-if (Xmove5 > 800){
+if (Xmove5 > 1280){
   Xmove5 = 0;
 }
 
@@ -107,15 +107,18 @@ if (Xmove5 > 800){
   fill (255); // white
   ellipse(255, 530, 200, cloudSize, cloudSize); //lower right cloud
 
-  stroke(0)
-  strokeWeight(1)
-  fill (0,0,255);
-  beginShape();
-  vertex(170, 455);
-  vertex(170, 405);
-  vertex(180, 405);
+  // stroke(0)
+  // strokeWeight(1)
+  // fill (0,0,255);
+  // beginShape();
+  // vertex(170, 455);
+  // vertex(170, 405);
+  // vertex(180, 405);
 
-  endShape();
+  // endShape();
+
+fill (227, 161, 218);
+ellipse(170, 410, 50, 80);
 
 strokeWeight(0);
  fill (237, 238, 240); // grey
