@@ -1,8 +1,9 @@
 
 let Xmove = 1
-let Xmove2 = 2
+let Xmove2 = 1
 let Xmove3 = 3
 let Xmove4 = 4
+let Xmove5 = 1
 
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
@@ -51,25 +52,47 @@ fill (237, 240, 245);
   ellipse(width - 60 - Xmove2, 300, cloudSize3, 100); //middle cloud - left
 
   let cloudSize5 = map(other, 0, 100, 100, 30);
+  fill (218, 221, 227); //shadow for far clouds - grey
+  ellipse(width - Xmove4, 140, 80, cloudSize5, 30);//mid
+  ellipse(width - 15 - Xmove4, 143, 80, cloudSize5, 30);//left
+  ellipse(width + 15 - Xmove4, 145, 80, cloudSize5, 30);// right
+
   fill (237, 240, 245)
-  ellipse(300, 135, 80, cloudSize5, 30);//mid
-  ellipse(285, 138, 80, cloudSize5, 30);//left
-  ellipse(315, 140, 80, cloudSize5, 30);
+  ellipse(width - Xmove4, 133, 80, cloudSize5, 30);//mid
+  ellipse(width - 15 - Xmove4, 138, 80, cloudSize5, 30);//left
+  ellipse(width + 15 - Xmove4, 140, 80, cloudSize5, 30);// right
+
+  let cloudSize6 = map(other, 0, 100, 150, 100);
+  fill (255);
+  ellipse(width - Xmove5, 540, 200, cloudSize6, cloudSize6);
+  ellipse(width - 30 - Xmove5, 570, 200, cloudSize6, cloudSize6);
+  ellipse(width + 30 - Xmove5, 575, 200, cloudSize6, cloudSize6);
+
 
   Xmove = Xmove + 0.5;
   if (Xmove > 680){
     Xmove = 0;
   }
 
-  Xmove2 = Xmove2 + 0.8;
+  Xmove2 = Xmove2 + 0.7;
   if(Xmove2 > 1250){
     Xmove2 = 0;
   }
 
-Xmove3 = Xmove3 + 0.2;
+Xmove3 = Xmove3 + 0.3;
   if (Xmove3 > 650){
     Xmove3 = 0;
   }
+
+Xmove4 = Xmove4 + 0.1;
+if (Xmove4 > 650){
+  Xmove4 = 0;
+}
+
+Xmove5 = Xmove5 + 0.9;
+if (Xmove5 > 800){
+  Xmove5 = 0;
+}
 
  let cloudSize = map(other, 0, 100, 160, 80)
 
@@ -84,6 +107,17 @@ Xmove3 = Xmove3 + 0.2;
   fill (255); // white
   ellipse(255, 530, 200, cloudSize, cloudSize); //lower right cloud
 
+  stroke(0)
+  strokeWeight(1)
+  fill (0,0,255);
+  beginShape();
+  vertex(170, 455);
+  vertex(170, 405);
+  vertex(180, 405);
+
+  endShape();
+
+strokeWeight(0);
  fill (237, 238, 240); // grey
   ellipse(50, 445, 200, cloudSize, cloudSize);// mid shadow
   ellipse(151, 475, 200, cloudSize, cloudSize);
@@ -93,6 +127,7 @@ Xmove3 = Xmove3 + 0.2;
   ellipse(220, 540, 200, cloudSize, cloudSize);
   // ellipse(250, 540, 200, cloudSize, cloudSize);
 
+  
   fill (255); //white 
   // if(counter > 4700){
   //   fill (42, 48, 61)
