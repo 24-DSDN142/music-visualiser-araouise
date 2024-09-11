@@ -118,32 +118,84 @@ if (Xmove5 > 1280){
   // endShape();
 // stroke(0);
 // strokeWeight(1);  
+
+//neck
 fill (214, 202, 193);
 beginShape();
-vertex(180, 325);
-vertex(175, 400);
-vertex(160, 400);
-vertex(165, 325);
+vertex(220, 325);
+vertex(205, 400);
+vertex(195, 400);
+vertex(200, 325);
 endShape();
 
 
-
+//head
 strokeWeight(0);
 fill (230, 218, 209);
-ellipse(175, 330, 35, 50);
-
-fill (0)
-beginShape();
-vertex(203, 319);
-bezierVertex(187, 254, 88, 330, 167, 360);
-endShape();
+ellipse(210, 330, 35, 50);
 
 fill (227, 161, 218); // girl's body
-ellipse(170, 410, 50, 80);
+ellipse(200, 410, 50, 80);
+ fill (0)
+
+// beginShape();
+// vertex(203, 319);
+// bezierVertex(187, 254, 88, 330, 167, 360);
+// endShape();
+//hair
+beginShape();
+vertex(205, 379);
+bezierVertex(181, 348, 182, 296, 203, 306);
+endShape();
+
+beginShape();
+vertex(199, 318);
+bezierVertex(177, 292, 248, 304, 226, 317);
+endShape();
+
+beginShape();
+vertex(198, 311);
+bezierVertex(246, 297, 232, 330, 193, 322);
+endShape();
+
+beginShape();
+vertex(202, 311);
+bezierVertex(225, 397, 190, 402, 202, 310);
+endShape();
+
+ellipse(203, 323, 10, 10);
+
+//arm
+fill (230, 218, 209);
+beginShape();
+vertex(225, 470);
+vertex(210, 400);
+vertex(195, 415);
+vertex(220, 470)
+endShape();
+
+//shoulder
+fill (196, 132, 188)
+beginShape();
+vertex(193, 423);
+bezierVertex(175, 383, 216, 382, 215, 411);
+endShape();
 
 
 
-strokeWeight(0);
+
+//leg
+stroke(0);
+strokeWeight(1);
+fill (40, 72, 128);
+beginShape();
+vertex(211, 458);
+bezierVertex(299, 445, 257, 525, 262, 520);
+endShape();
+
+
+
+  strokeWeight(0);
  fill (237, 238, 240); // grey
   ellipse(50, 445, 200, cloudSize, cloudSize);// mid shadow
   ellipse(151, 475, 200, cloudSize, cloudSize);
@@ -152,7 +204,6 @@ strokeWeight(0);
   ellipse(150, 540, 200, cloudSize, cloudSize);
   ellipse(220, 540, 200, cloudSize, cloudSize);
   // ellipse(250, 540, 200, cloudSize, cloudSize);
-
   
   fill (255); //white 
   // if(counter > 4700){
@@ -163,7 +214,6 @@ strokeWeight(0);
   ellipse(20, 540, 200, cloudSize, cloudSize);
   ellipse(150, 535, 200, cloudSize, cloudSize);
   ellipse(230, 535, 200, cloudSize, cloudSize);
-
 
 
   // if(counter > 4700){
