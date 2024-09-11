@@ -4,24 +4,30 @@ let Xmove2 = 1
 let Xmove3 = 3
 let Xmove4 = 4
 let Xmove5 = 1
+let Xmove6 = 3
 
 let Ymove = 0
 let Ymove1 = 0
 let Ymove2 = 0
 let Ymove3 = 0
+let Ymove4 = 0
 
 let Sky = [];
+let Sky1 = [];
+let Sky2 = [];
+let firstRun = true;
 
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
 
-
+if (firstRun){
   rectMode(CENTER);
   Sky = loadImage('bluesky.png');
-  Sky = loadImage('sunset.png');
-  Sky = loadImage('night.png'); 
+  Sky1 = loadImage('sunset.png');
+  Sky2= loadImage('night.png'); 
 
-
+  firstRun = false
+}
   background(135, 206, 235) // pastel blue
   textFont('Verdana'); // please use CSS safe fonts
   rectMode(CENTER);
@@ -30,12 +36,31 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   console.log(counter);
   strokeWeight(0)
 
+// blue sky
+if(counter < 3200 ){
+  push();
+rectMode(CENTER);
+image(Sky,0, 0);
+pop();
+}
 
-  if(counter > 4700){
-    background(42, 34, 51);
+// sunset
+if(counter > 3201 && counter < 4700){
+  push();
+rectMode(CENTER);
+image(Sky1,0, 0);
+pop();
+}
+
+// night
+  if(counter > 4701){
+    push();
+    rectMode(CENTER);
+    image(Sky2,0, 0);
+    pop();
   }
 
-if(counter > 4700){
+if(counter > 4700){ //stars
 strokeWeight(0);
  let y = 200
   let stars = map(vocal, 0, 100, 10, 4)
@@ -50,6 +75,25 @@ strokeWeight(0);
   }
 
 }
+
+// balloon
+  if(counter > 1800){
+    noFill();
+    strokeWeight(2);
+  beginShape();
+  vertex(101, height - Ymove4);
+  vertex(101, height + 70 - Ymove4);
+  endShape(CLOSE);
+  
+  
+    fill (38, 66, 166);// blue
+  ellipse(100, height - Ymove4, 40, 50);
+  
+  
+  Ymove4 = Ymove4 + 0.6;
+  
+  }
+strokeWeight(0);
   let cloudSize4 = map(other, 0, 100, 70, 20);
   fill (218, 221, 227); //shadow for far clouds - grey
   ellipse(width - Xmove3, 205, 50, cloudSize4, 1); // mid (far clouds)
@@ -167,6 +211,11 @@ Xmove5 = Xmove5 + 0.9;
 if (Xmove5 > 1280){
   Xmove5 = 0;
 }
+
+Xmove6 = Xmove6 + 0.3;
+  if (Xmove6 > 1100){
+    Xmove6 = 0;
+  }
 
  let cloudSize = map(other, 0, 100, 160, 80)
 
@@ -324,7 +373,10 @@ ellipse(900, height - Ymove2, 70, 80);
 
 }
 
-
+// push();
+// rectMode(CENTER);
+// image(Sky1, 500, 300);
+// pop();
 
 
   // if(counter > 4700){
