@@ -4,14 +4,14 @@ let Xmove2 = 1
 let Xmove3 = 3
 let Xmove4 = 4
 let Xmove5 = 1
-
+let Sky = bluesky.png
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
   background(135, 206, 235) // pastel blue
   textFont('Verdana'); // please use CSS safe fonts
   rectMode(CENTER)
   textSize(24);
-  console.log(counter)
+  console.log(counter);
   strokeWeight(0)
 
 
@@ -126,11 +126,17 @@ vertex(160, 400);
 vertex(165, 325);
 endShape();
 
+
+
 strokeWeight(0);
 fill (230, 218, 209);
 ellipse(175, 330, 35, 50);
 
-
+fill (0)
+beginShape();
+vertex(203, 319);
+bezierVertex(187, 254, 88, 330, 167, 360);
+endShape();
 
 fill (227, 161, 218); // girl's body
 ellipse(170, 410, 50, 80);
@@ -158,6 +164,8 @@ strokeWeight(0);
   ellipse(150, 535, 200, cloudSize, cloudSize);
   ellipse(230, 535, 200, cloudSize, cloudSize);
 
+
+
   // if(counter > 4700){
   //   fill (42, 48, 61)
   // }
@@ -175,6 +183,8 @@ strokeWeight(0);
 
 
 }
+
+
 //    let bar_spacing = height / 10;
 //    let bar_height = width / 12;
 //    let bar_pos_x = width / 2;
