@@ -1,6 +1,6 @@
 const canvasWidth = 1080;
 const canvasHeight = 600;
-
+const bezierToolDefaultActive = false;
 
 let mainCanvas;
 
@@ -76,6 +76,9 @@ function setup() {
   songButton.parent('button1Container');
   songButton.elt.disabled = true;
 
+  // Initialise Bezier Helper
+  BezierHelper.useBezierTool(bezierToolDefaultActive);
+
   vol1 = [];
   vol2 = [];
   vol3 = [];
@@ -119,7 +122,7 @@ function switchRunMode() {
     slider2.elt.disabled = true;
     slider3.elt.disabled = true;
     slider4.elt.disabled = true;
-
+    
     editorMode = false;
     let now = millis();
     songEpoch = now + (debugFastRefresh ? 0 : 5000);

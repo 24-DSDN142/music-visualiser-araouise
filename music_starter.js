@@ -116,9 +116,26 @@ if (Xmove5 > 1280){
   // vertex(180, 405);
 
   // endShape();
+// stroke(0);
+// strokeWeight(1);  
+fill (214, 202, 193);
+beginShape();
+vertex(180, 325);
+vertex(175, 400);
+vertex(160, 400);
+vertex(165, 325);
+endShape();
 
-fill (227, 161, 218);
+strokeWeight(0);
+fill (230, 218, 209);
+ellipse(175, 330, 35, 50);
+
+
+
+fill (227, 161, 218); // girl's body
 ellipse(170, 410, 50, 80);
+
+
 
 strokeWeight(0);
  fill (237, 238, 240); // grey
