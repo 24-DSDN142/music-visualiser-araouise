@@ -69,7 +69,7 @@ pop();
   //whale
 if(counter >= 8500 && counter <=9000){
   PopUp = PopUp + 0.5;
-}else if (counter>= 9001  && counter <=11600){
+}else if (counter>= 9001  && counter <=12300){
   PopUp = PopUp + 0.3
 }else 
 PopUp = 0.7
