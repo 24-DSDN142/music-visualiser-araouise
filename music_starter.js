@@ -12,17 +12,15 @@ let Ymove2 = 0
 let Ymove3 = 0
 let Ymove4 = 0
 let Ymove5 = 0
+let Ymove6 = 0
+let Ymove7 = 0
 
 let Sky = [];
 let Sky1 = [];
 let Sky2 = [];
 let whale = []
-let Jelly = [];
-let Jelly1 = [];
-let Jelly2 = [];
 let firstRun = true;
 
-let JellyMove = [0, 0, 0, 0, 0,]
 
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
@@ -33,9 +31,7 @@ if (firstRun){
   Sky1 = loadImage('sunset.png');
   Sky2= loadImage('night1.png'); 
   whale = loadImage('whale.png');
-  Jelly = loadImage('JellyRed.png')
-  Jelly1 = loadImage('JellyBlue.png')
-  Jelly2 = loadImage('JellyYellow.png')
+
   firstRun = false
 }
   background(135, 206, 235) // pastel blue
@@ -73,17 +69,10 @@ pop();
   //whale
 if(counter >= 8500 && counter <=9000){
   PopUp = PopUp + 0.5;
-}else if (counter>= 9001  && counter <=10500){
-  PopUp = PopUp + 0.7
+}else if (counter>= 9001  && counter <=11600){
+  PopUp = PopUp + 0.3
 }else 
-PopUp = 0.1
-
-if(counter > 200){
-push();
-rectMode(CENTER);
-img(Jelly1, 500 , 600);
-pop();
-}
+PopUp = 0.7
 
 if(counter > 4700){ //stars
 strokeWeight(0);
@@ -389,15 +378,6 @@ ellipse(600, height - Ymove, 70, 80);
 
 }
 
-//   push();
-//   rectMode(CENTER);
-//   img(Jelly, 600, height - PopUp1);
-// pop();
-
- 
-
-
-
 if(counter > 1900 ){
   noFill();
   strokeWeight(2);
@@ -433,9 +413,40 @@ ellipse(900, height - Ymove2, 70, 80);
 }
 
 
+if(counter > 3400 ){
+  noFill();
+  strokeWeight(2);
+beginShape();
+vertex(801, height - Ymove6);
+vertex(801, height + 150 - Ymove6);
+endShape(CLOSE);
+
+strokeWeight(0);
+  fill (38, 66, 166);// blue
+ellipse(800, height - Ymove6, 70, 80);
 
 
-  // if(counter > 4700){
+  Ymove6 = Ymove6 + 0.6;
+
+}
+
+
+if(counter > 3000 ){
+  noFill();
+  strokeWeight(2);
+beginShape();
+vertex(201, height - Ymove7);
+vertex(201, height + 150 - Ymove7);
+endShape(CLOSE);
+
+strokeWeight(0);
+  fill (212, 193, 102);// yellow
+ellipse(200, height - Ymove7, 70, 80);
+
+
+  Ymove7 = Ymove7 + 0.6;
+
+}
   //   fill (42, 48, 61)
   // }
 
@@ -452,82 +463,3 @@ ellipse(900, height - Ymove2, 70, 80);
 
 
 }
-
-
-//    let bar_spacing = height / 10;
-//    let bar_height = width / 12;
-//    let bar_pos_x = width / 2;
- 
-
-//    // vocal bar is red
-//    fill(200, 0, 0);
-//    rect(bar_pos_x, height / 2 + 1 * bar_spacing, 4 * vocal, bar_height);
-//    fill(0);
-//    text("vocals", bar_pos_x, height / 2 + 1 * bar_spacing + 8);
- 
-//    // drum bar is green
-//    fill(0, 200, 0);
-//    rect(bar_pos_x, height / 2 + 2 * bar_spacing, 4 * drum, bar_height);
-//    fill(0);
-//    text("drums", bar_pos_x, height / 2 + 2 * bar_spacing + 8);
- 
-//    // bass bar is blue
-//    fill(50, 50, 240);
-//    rect(bar_pos_x, height / 2 + 3 * bar_spacing, 4 * bass, bar_height);
-//    fill(0);
-//    text("bass", bar_pos_x, height / 2 + 3 * bar_spacing + 8);
- 
-//    // other bar is white
-//    fill(200, 200, 200);
-//    rect(bar_pos_x, height / 2 + 4 * bar_spacing, 4 * other, bar_height);
-//    fill(0);
-//    text("other", bar_pos_x, height / 2 + 4 * bar_spacing + 8);
-//    fill(255, 255, 0);
- 
-//    // display "words"
-//    textAlign(CENTER);
-//    textSize(vocal);
-//    text(words, width/2, height/3);
-// 
-  //handle
-  //stroke(235, 216, 52)
-  //fill(135, 206, 235)
-  //rect(300, 300, 300, 100)
-
-//   // buttons
-//   let buttonSize = map(vocal, 0, 100, 10, 50)
-//   fill (255)
-//   strokeWeight(0)
-//   rect(300, 300, buttonSize, buttonSize) // middle
-
-//   let buttonSize2 = map(bass, 0, 100, 10, 50)
-//   rect (250, 300, buttonSize2, buttonSize2) //left
-
-//   let buttonSize3 = map(other, 0, 100, 10, 50)
-//   rect (350, 300, buttonSize3, buttonSize3) // right
-
-//   //speaker body
-//   fill(235, 216, 52)
-//  rect(300, 400, 500, 200)
-
-//  //speaker
-//   let speakerSize = map(drum, 0, 100, 50, 200)
-//   fill (255)
-//   stroke(235, 216, 52)
-//   ellipse(150, 400, speakerSize, speakerSize)
-//   ellipse(450, 400, speakerSize, speakerSize)
-//   fill (235, 216, 52)
-//   ellipse(150, 400, speakerSize/2, speakerSize/2)
-//   ellipse(450, 400, speakerSize/2, speakerSize/2)
-
-  // let y = 70
-  // let stars = map(vocal, 0, 100, 40, 20)
-  // for( let i = 1; i < 4; i++){
-  // let loopyY = y * i;
-  // fill (255)
-  // ellipse(100, loopyY, stars, stars)
-  // ellipse(200, loopyY, stars, stars)
-  // ellipse(300, loopyY, stars, stars)
-  // ellipse(400, loopyY, stars, stars)
-  // ellipse(500, loopyY, stars, stars)
-  // }
