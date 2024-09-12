@@ -65,6 +65,7 @@ pop();
     pop();
   }
 
+  //whale
 if(counter >= 115 && counter <=300){
   PopUp = PopUp + 0.5;
 }else if (counter>= 301  && counter <=2000){
@@ -76,7 +77,7 @@ PopUp = 0.1
 if(counter > 4700){ //stars
 strokeWeight(0);
  let y = 200
-  let stars = map(vocal, 0, 100, 20, 7)
+  let stars = map(vocal, 0, 100, 20, 4)
   for( let i = 1; i < 4; i++){
   let loopyY = y * i;
   fill (245, 242, 230)
