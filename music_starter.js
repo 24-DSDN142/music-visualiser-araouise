@@ -11,10 +11,15 @@ let Ymove1 = 0
 let Ymove2 = 0
 let Ymove3 = 0
 let Ymove4 = 0
+let Ymove5 = 0
+
+let whaleMoveX = 0
+let whaleMoveY = 0
 
 let Sky = [];
 let Sky1 = [];
 let Sky2 = [];
+let whale = []
 let firstRun = true;
 
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
@@ -25,7 +30,7 @@ if (firstRun){
   Sky = loadImage('bluesky.png');
   Sky1 = loadImage('sunset.png');
   Sky2= loadImage('night.png'); 
-
+  whale = loadImage('whale.png');
   firstRun = false
 }
   background(135, 206, 235) // pastel blue
@@ -60,10 +65,18 @@ pop();
     pop();
   }
 
+if(counter >= 115 && counter <=300){
+  PopUp = PopUp + 0.5;
+}else if (counter>= 301  && counter <=2000){
+  PopUp = PopUp + 0.7
+}else 
+PopUp = 0.1
+
+
 if(counter > 4700){ //stars
 strokeWeight(0);
  let y = 200
-  let stars = map(vocal, 0, 100, 10, 4)
+  let stars = map(vocal, 0, 100, 20, 7)
   for( let i = 1; i < 4; i++){
   let loopyY = y * i;
   fill (245, 242, 230)
@@ -106,15 +119,32 @@ fill (237, 240, 245);
   ellipse(width + 10 - Xmove3, 205, 50, cloudSize4, 1); // right
 
   fill (218, 221, 227); //shadow for far clouds - grey
-  ellipse(width - Xmove3 /3, 435, 50, cloudSize4, 1); // mid (far clouds)
-  ellipse(width - 10 - Xmove3 /3 , 445, 50, cloudSize4, 1); // left
-  ellipse(width  + 10 - Xmove3 /3 , 440, 50, cloudSize4, 1); // right
+  ellipse(width - Xmove6 /3, 435, 50, cloudSize4, 1); // mid (far clouds)
+  ellipse(width - 10 - Xmove6 /3 , 445, 50, cloudSize4, 1); // left
+  ellipse(width  + 10 - Xmove6 /3 , 440, 50, cloudSize4, 1); // right
 
 fill (237, 240, 245);
-  ellipse(width - Xmove3 /3, 430, 50,cloudSize4, 1); // mid (far clouds)
-  ellipse(width - 10 - Xmove3 /3, 440, 50, cloudSize4, 1); // left
-  ellipse(width + 10 - Xmove3 /3, 435, 50, cloudSize4, 1); // right
+  ellipse(width - Xmove6 /3, 430, 50,cloudSize4, 1); // mid (far clouds)
+  ellipse(width - 10 - Xmove6 /3, 440, 50, cloudSize4, 1); // left
+  ellipse(width + 10 - Xmove6 /3, 435, 50, cloudSize4, 1); // right
 
+  if(counter > 2500){
+    noFill();
+    strokeWeight(2);
+  beginShape();
+  vertex(1001, height - Ymove5);
+  vertex(1001, height + 70 - Ymove5);
+  endShape(CLOSE);
+  
+  
+    fill (166, 38, 38);// red
+  ellipse(1000, height - Ymove5, 40, 50);
+  
+  
+  Ymove5 = Ymove5 + 0.6;
+  }
+
+  strokeWeight(0);
   let cloudSize2 = map(other, 0, 100, 160, 80);
   fill (232, 237, 237); // shadow top clouds - moving
   ellipse(width - Xmove, 85, cloudSize2, 60); //middle
@@ -216,6 +246,13 @@ Xmove6 = Xmove6 + 0.3;
   if (Xmove6 > 1100){
     Xmove6 = 0;
   }
+
+push();
+rectMode(CENTER);
+image(whale, width - PopUp, height - PopUp);
+pop();
+
+
 
  let cloudSize = map(other, 0, 100, 160, 80)
 
@@ -372,6 +409,8 @@ ellipse(900, height - Ymove2, 70, 80);
   Ymove2 = Ymove2 + 0.6;
 
 }
+
+
 
 // push();
 // rectMode(CENTER);
